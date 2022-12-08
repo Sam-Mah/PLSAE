@@ -32,11 +32,10 @@ def getBatch(list, batchSize):
             yield list[i:i + batchSize]
     except Exception as E:
         print(E)
-# Launch the graph
+
 def accuracytestNN(sess):
 
     return tf_confusion_metrics(Pred_AE, y, sess, {x: test_data, y: test_labels})
-
 
 def accuracytestPL(sess):
 
@@ -140,7 +139,6 @@ train_data, test_data, train_labels, test_labels = train_test_split(
 print(type(train_labels))
 
 s = np.array([np.where(r == 1)[0][0] for r in train_labels])
-# s = s.astype(int)
 print(np.unique(s))
 print("Adware_training=", (s == 0).sum())
 print("Banking_training=", (s == 1).sum())
@@ -174,8 +172,6 @@ pseudo_label_accuracy = 0
 
 learningRate = 0.007
 trainingEpochs = 1500
-#
-
 lbl_samples = 8118
 
 # Network Parameters
@@ -216,8 +212,6 @@ y = tf.placeholder("float", [None, outputN])
 PLx = tf.placeholder("float", [None, num_input])
 PLy = tf.placeholder("float", [None, outputN])
 alpha = tf.placeholder("float", )
-
-# plt.clf()
 
 weightsAE = {
     'encoder_h1': tf.Variable(tf.random_normal([num_input, num_hidden_1], stddev=1.0, mean=0.0)),
