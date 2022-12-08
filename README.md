@@ -1,4 +1,4 @@
-# -PLSAE
+# PLSAE
 
 This repository is an implementation of the paper "Efective and Efcient Hybrid Android Malware
 Classifcation Using Pseudo‑Label Stacked Auto‑Encoder" (https://link.springer.com/article/10.1007/s10922-021-09634-4).
